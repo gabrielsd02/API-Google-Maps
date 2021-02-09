@@ -3,11 +3,11 @@ version: '3.5'
 
 # variaveis de configuração
 x-banco: &BANCO
-  ${BANCO:-db_geogrid}
+  ${BANCO:-db_teste}
 x-banco-porta: &BANCO_PORTA
   ${BANCO_PORTA:-3306:3306}
 x-servidor: &SERVIDOR
-  ${SERVIDOR:-apache_geogrid}
+  ${SERVIDOR:-apache_teste}
 x-servidor-porta: &SERVIDOR_PORTA
   ${SERVIDOR_PORTA:-80:80}
 x-servido-caminho: &SERVIDOR_CAMINHO
@@ -29,7 +29,7 @@ services:
     ports:
       - *BANCO_PORTA
     networks:
-    - rede_geogridmaps
+    - rede_teste
 
   apache:
     build:
@@ -44,8 +44,8 @@ services:
     ports:
       - *SERVIDOR_PORTA
     networks:
-    - rede_geogridmaps
+    - rede_teste
 
 networks:
-  rede_geogridmaps:
-    name: 'rede_geogridmaps'
+  rede_teste:
+    name: 'rede_teste'
